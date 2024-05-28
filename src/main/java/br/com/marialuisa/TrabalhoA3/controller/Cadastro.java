@@ -13,8 +13,10 @@ public class Cadastro {
 		uno.setVelocidade(0);
 		
 		Carro gol = new Carro("VW", "Gol Turbo", 2020, true, 70);
+		
 		Carro ka = new Carro("Ford", "Ka Sedan", 2019);
 		Carro onyx = new Carro("chevrolet", "Onyx", 2019);
+		
 		System.out.println("\nFabricante: " + uno.getFabricante());
 		System.out.println("Modelo: " + uno.getModelo());
 		

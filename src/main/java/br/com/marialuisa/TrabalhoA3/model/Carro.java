@@ -50,7 +50,7 @@ public class Carro {
 	
 	public String ligarMotor() {
 		if (this.motorLigado) {
-			return "O motor do " + this.modelo + " jÃ¡ estava ligado.";
+			return "O motor do " + this.modelo + " já estava ligado.";
 		} else {
 			this.motorLigado = true; //ligando o motor
 			return "O motor do " + this.modelo + " foi ligado agora.";
@@ -59,10 +59,10 @@ public class Carro {
 	
 	public String desligarMotor() {
 		if ( !this.motorLigado ) {
-			return "O motor do " + this.modelo + " jÃ¡ estava desligado.";
+			return "O motor do " + this.modelo + " já estava desligado.";
 		} else {
 			if ( this.velocidade != 0 ) {
-				return "ATENÃ‡ÃƒO: O motor do " + this.modelo + " nÃ£o foi desligado pois o carro estÃ¡ em movimento.";
+				return "ATENÇÃO: O motor do " + this.modelo + " não foi desligado pois o carro está em movimento.";
 			} else {
 				this.motorLigado = false; //desligando o motor
 				return "O motor do " + this.modelo + " foi desligado agora.";
@@ -75,20 +75,20 @@ public class Carro {
 			this.velocidade += valor; //this.velocidade = this.velocidade + valor;
 			return this.modelo + " --> ACELEROU!!! Velocidade atual: " + this.velocidade + " Km/h.";
 		} else {
-			return this.modelo + " --> ATENÃ‡ÃƒO: NÃ£o Ã© possÃ­vel acelerar com o motor desligado!";
+			return this.modelo + " --> ATENÇÃO: Não é possível acelerar com o motor desligado!";
 		}
 	}
 	
 	public String frear ( int valor ) {
 		if ( !this.motorLigado ) {
-			return this.modelo + " --> ATENÃ‡ÃƒO: O motor estÃ¡ desligado! O carro jÃ¡ estÃ¡ parado!";
+			return this.modelo + " --> ATENÇÃO: O motor está desligado! O carro já está parado!";
 		} else { //daqui em diante -> MOTOR LIGADO
 			if ( this.velocidade == 0 ) {
-				return this.modelo + " --> ATENÃ‡ÃƒO: O carro jÃ¡ estÃ¡ parado!";
+				return this.modelo + " --> ATENÇÃO: O carro já está parado!";
 			} else {//daqui em diante -> MOTOR LIGADO e VELOCIDADE != 0
 				if ( this.velocidade - valor <= 0 ) {
 					this.velocidade = 0; //Parando o carro (sem deixar virar velocidade negativa)
-					return this.modelo + " --> FREOU!!! O carro estÃ¡ PARADO!";
+					return this.modelo + " --> FREOU!!! O carro está PARADO!";
 				} else { //daqui em diante -> MOTOR LIGADO e Velocidade != 0 e FREA mas AINDA EM MOVIMENTO
 					this.velocidade -= valor; //this.velocidade = this.velocidade - valor;
 					return this.modelo + " --> FREOU!!! Velocidade atual: " + this.velocidade + " km/h.";
